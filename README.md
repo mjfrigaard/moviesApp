@@ -371,7 +371,7 @@ tests
 
 ### `12d_tests-mocks`
 
-[`12d_tests-fixtures`](https://github.com/mjfrigaard/moviesApp/tree/12d_tests-mocks) demonstrates simulating behaviors with test 'mocks.'
+[`12d_tests-mocks`](https://github.com/mjfrigaard/moviesApp/tree/12d_tests-mocks) demonstrates simulating behaviors with test 'mocks.'
 
 ```
 tests
@@ -389,4 +389,3 @@ tests
 
 5 directories, 7 files
 ```
-
