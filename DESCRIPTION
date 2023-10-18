@@ -11,6 +11,7 @@ RoxygenNote: 7.2.3
 LazyData: true
 Imports: 
     bslib,
+    cli,
     ggplot2,
     logger,
     rlang,

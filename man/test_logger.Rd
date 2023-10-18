@@ -17,5 +17,7 @@ test_logger(start = NULL, end = NULL, msg)
 message to test output
 }
 \description{
-Test logger (test utility)
+This is an example test helper function that's also part of the package
+namespace. Functions in the \verb{tests/testthat/} folder with a \verb{<helper>.R}
+prefix will be automatically loaded.
 }
