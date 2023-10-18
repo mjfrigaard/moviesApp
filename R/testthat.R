@@ -1,4 +1,10 @@
 #' Test logger (test utility)
+#' 
+#' @description
+#' This is an example test helper function that's also part of the package 
+#' namespace. Functions in the `tests/testthat/` folder with a `<helper>.R` 
+#' prefix will be automatically loaded. 
+#' 
 #'
 #' @param start test start message 
 #' @param end test end message 
