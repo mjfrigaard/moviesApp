@@ -23,7 +23,8 @@ make_ggp2_inputs <- function() {
      )")
 }
 
-tidy_ggp2_movies <- function(movies_data) {
+tidy_ggp2_movies2 <- function(movies_data_url) {
+  movies_data <- vroom::vroom(file = movies_data_url)
   # restructure
   long_data <- movies_data |>
     dplyr::rowwise() |>
@@ -68,64 +69,27 @@ tidy_ggp2_movies <- function(movies_data) {
       TRUE ~ genres
     ),
     genre = factor(genre),
+    genre_count = as.integer(genre_count),
     mpaa = dplyr::na_if(x = mpaa, y = ""),
     mpaa = factor(mpaa,
       levels = c("G", "PG", "PG-13", "R", "NC-17"),
       labels = c("G", "PG", "PG-13", "R", "NC-17")
     )
-  )
+  ) |> 
+    # convert to df
+    as.data.frame()
 }
 
-base_tidy_ggp2_movies <- function(movies_data) {
-  # specify genre columns
-  genre_cols <- c(
-    "Action", "Animation",
-    "Comedy", "Drama",
-    "Documentary", "Romance",
-    "Short"
-  )
-  # calculate row sum for genres
-  movies_data$genre_count <- rowSums(movies_data[, genre_cols])
-  # create aggregate 'genres' for multiple categories
-  movies_data$genres <- apply(
-    X = movies_data[, genre_cols],
-    MARGIN = 1,
-    FUN = function(row) {
-      genres <- names(row[row == 1])
-      if (length(genres) > 0) {
-        return(paste(genres, collapse = ", "))
-      } else {
-        return(NA)
-      }
-    }
-  )
-  # format variables
-  movies_data$genre_count <- as.integer(movies_data$genre_count)
-  movies_data$genre <- ifelse(test = movies_data$genre_count > 1,
-    yes = "Multiple genres",
-    no = movies_data$genres
-  )
-  movies_data$genre <- as.factor(movies_data$genre)
-  movies_data$mpaa <- factor(movies_data$mpaa,
-    levels = c("G", "PG", "PG-13", "R", "NC-17"),
-    labels = c("G", "PG", "PG-13", "R", "NC-17")
-  )
+# base version 
+bdat <- tidy_ggp2_movies("https://raw.githubusercontent.com/hadley/ggplot2movies/master/data-raw/movies.csv")
 
-  # reduce columns to only those in graph
-  movies_data[, c(
-    "title", "year", "length", "budget",
-    "rating", "votes", "mpaa", "genre_count",
-    "genres", "genre"
-  )]
-}
+# dplyr & tidyr version
+tdat <- tidy_ggp2_movies2("https://raw.githubusercontent.com/hadley/ggplot2movies/master/data-raw/movies.csv")
 
-tdat <- base_tidy_ggp2_movies(ggplot2movies::movies)
-bdat <- tidy_ggp2_movies(ggplot2movies::movies)
-
-
-tdat_genres <- dplyr::filter(tdat, genre_count > 2) |>
-  dplyr::select(title, genre_count, genre, genres)
+# get subset of multiple genres 
 bdat_genres <- dplyr::filter(bdat, genre_count > 2) |>
   dplyr::select(title, genre_count, genre, genres)
-
+tdat_genres <- dplyr::filter(tdat, genre_count > 2) |>
+  dplyr::select(title, genre_count, genre, genres)
+# compare
 waldo::compare(bdat_genres, tdat_genres)

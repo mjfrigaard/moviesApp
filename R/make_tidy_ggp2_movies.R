@@ -1,3 +1,13 @@
+#' Import and tidy `ggplot2movies::movies` data
+#'
+#' @param movies_data_url url to raw data on GitHub.
+#'
+#' @return tidy `movies` data 
+#' 
+#' @export
+#'
+#' @examples
+#' str(make_tidy_ggp2_movies("https://raw.githubusercontent.com/hadley/ggplot2movies/master/data-raw/movies.csv"))
 make_tidy_ggp2_movies <- function(movies_data_url) {
   movies_data <- read.csv(file = movies_data_url)
   # specify genre columns
@@ -41,14 +51,3 @@ make_tidy_ggp2_movies <- function(movies_data_url) {
     "genres", "genre"
   )]
 }
-
-tidy_ggp2_movies <- make_tidy_ggp2_movies("https://raw.githubusercontent.com/hadley/ggplot2movies/master/data-raw/movies.csv")
-
-# save to tests/testthat/fixtures/
-saveRDS(object = tidy_ggp2_movies, 
-  file = "tests/testthat/fixtures/tidy_ggp2_movies.rds")
-
-dist_titles <- unique(ggplot2movies::movies$title)
-dist_tidy_titles <- unique(tidy_ggp2_movies$title)
-waldo::compare(dist_titles, dist_tidy_titles)
-identical(dist_titles, dist_tidy_titles)
