@@ -12,9 +12,9 @@
 #' check_installed("foo")
 #' check_installed("base")
 check_installed <- function(package) {
-  if (rlang::is_installed(package)) {
-    message("Installed")
+  if (is_installed(package)) {
+    return(invisible())
   } else {
-    cli::cli_abort("Please install '{package}' before continuing")
+    stop("Please install '{package}' before continuing")
   }
 }
