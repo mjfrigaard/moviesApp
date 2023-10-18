@@ -1,8 +1,6 @@
 # load packages --------------------
 library(tidyr)
 library(dplyr)
-library(stringr)
-library(purrr)
 library(waldo)
 
 make_var_inputs <- function() {
@@ -78,7 +76,7 @@ tidy_ggp2_movies <- function(movies_data) {
   )
 }
 
-tidy_ggp2_movies_base <- function(movies_data) {
+base_tidy_ggp2_movies <- function(movies_data) {
   # specify genre columns
   genre_cols <- c(
     "Action", "Animation",
@@ -120,6 +118,9 @@ tidy_ggp2_movies_base <- function(movies_data) {
     "genres", "genre"
   )]
 }
+
+tdat <- base_tidy_ggp2_movies(ggplot2movies::movies)
+bdat <- tidy_ggp2_movies(ggplot2movies::movies)
 
 
 tdat_genres <- dplyr::filter(tdat, genre_count > 2) |>
