@@ -11,7 +11,7 @@ testthat::it(
     And the points on the scatter plot should be colored by 'MPAA Rating' 
   ", code = {
 
-    test_logger(start = "T2", msg = "Tests initial x/y/z variables")
+    test_logger(start = "T2", msg = "Tests F1.2 initial x/y/z variables")
                   
     scatter_inputs <- list(
                        x = 'imdb_rating',
@@ -44,7 +44,7 @@ testthat::it(
         ggplot2::theme(legend.position = "bottom") 
     )
     
-    test_logger(end = "T2", msg = "Tests initial x/y/z variables")
+    test_logger(end = "T2", msg = "Tests F1.2 initial x/y/z variables")
     
   })
   
