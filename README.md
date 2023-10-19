@@ -33,7 +33,6 @@ tests
 5 directories, 7 files
 ```
 
-
 ### `12c_tests-helpers`
 
 [`12c_tests-helpers`](https://github.com/mjfrigaard/moviesApp/tree/12c_tests-helpers) explores using test helpers with unit tests.
