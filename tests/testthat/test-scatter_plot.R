@@ -8,8 +8,7 @@ testthat::it(
     And I have a dataset of movie reviews from IMDB and Rotten Tomatoes
     Then the scatter plot should show 'IMDB Rating' on the x-axis
     And the scatter plot should show 'Audience Score' on the y-axis
-    And the points on the scatter plot should be colored by 'MPAA Rating' 
-  ", code = {
+    And the points on the scatter plot should be colored by 'MPAA Rating'", code = {
 
     test_logger(start = "T2", msg = "Tests F1.2 initial x/y/z variables")
                   
@@ -19,8 +18,7 @@ testthat::it(
                        z = 'mpaa_rating',
                        alpha = 0.5,
                        size = 2,
-                       plot_title = 'Enter plot title'
-                      )
+                       plot_title = 'Enter plot title')
     
     vdiffr::expect_doppelganger(
       title = "FR12-FR14: initial x y z axes", 
