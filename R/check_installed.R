@@ -1,9 +1,13 @@
-#' check if package is installed
-#'
-#' @param package
-#'
-#' @return invisible
+#' Check if package is installed
 #' 
+#' @description
+#' An example function for demonstrating how to use `testthat`'s mocking 
+#' functions.
+#' 
+#' @param package string, name of package
+#'
+#' @return invisible 
+#'
 #' @importFrom rlang is_installed
 #'
 #' @export

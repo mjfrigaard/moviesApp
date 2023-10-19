@@ -2,18 +2,19 @@
 % Please edit documentation in R/check_installed.R
 \name{check_installed}
 \alias{check_installed}
-\title{check if package is installed}
+\title{Check if package is installed}
 \usage{
 check_installed(package)
 }
 \arguments{
-\item{package}{}
+\item{package}{string, name of package}
 }
 \value{
 invisible
 }
 \description{
-check if package is installed
+An example function for demonstrating how to use \code{testthat}'s mocking
+functions.
 }
 \examples{
 check_installed("foo")
