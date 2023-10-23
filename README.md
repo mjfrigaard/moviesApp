@@ -28,3 +28,5 @@ tests
 
 3 directories, 5 files
 ```
+
+Read more about test mocking functions [here](https://testthat.r-lib.org/reference/index.html#mocking).
