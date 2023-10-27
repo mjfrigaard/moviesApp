@@ -1,0 +1,10 @@
+The three files in the src/ subdirectory,
+  tidy.h
+  utf8.h
+  utf8.c  
+were originally written by
+  Dave Raggett <dsr@w3.org>
+and modified by Yixuan Qiu.
+
+Other part of this package was written by Yixuan Qiu.
+
