@@ -22,7 +22,10 @@ ui <- function(req) {
           ),
           shiny::mainPanel(
           # new image
-          shiny::tags$img(src = "img/leprechaun.jpg"),
+          shiny::tags$img(
+            src = "img/leprechaun.jpg", 
+            height="25%", 
+            width="25%"),
           plot_displayUI("plot")
           )
         )
