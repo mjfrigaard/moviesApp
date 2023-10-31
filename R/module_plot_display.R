@@ -1,11 +1,12 @@
 #' plot_display UI
+#' 
+#' @description A shiny Module.
 #'
 #' @param id Unique id for module instance.
 #'
 #' @return shiny UI module
+#' 
 #' @export plot_displayUI
-#'
-#' @description A shiny Module.
 #'
 plot_displayUI <- function(id){
 	ns <- NS(id)
@@ -43,12 +44,6 @@ plot_display_server <- function(id, var_inputs){
 				ns <- session$ns
 				send_message <- make_send_message(session)
 
-				send_message("show-packer",
-				  text = "this is a message from plot_display_server()")
-
-				# your code here
-    movies <- lap::movies
-
     inputs <- reactive({
       plot_title <- tools::toTitleCase(var_inputs$plot_title())
       list(
@@ -63,7 +58,7 @@ plot_display_server <- function(id, var_inputs){
 
     output$scatterplot <- renderPlot({
       plot <- scatter_plot(
-        df = movies,
+        df = lap::movies,
         x_var = inputs()$x,
         y_var = inputs()$y,
         col_var = inputs()$z,
