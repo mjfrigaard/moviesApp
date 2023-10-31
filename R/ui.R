@@ -7,18 +7,18 @@
 #'
 #' @keywords internal
 ui <- function(req) {
-  shiny::fluidPage(
+  fluidPage(
     theme = bslib::bs_theme(version = 5),
     assets(),
     h1("lap"),
     ## New code -->
-        shiny::sidebarLayout(
-          shiny::sidebarPanel(
+        sidebarLayout(
+          sidebarPanel(
             var_inputUI("vars")
           ),
-          shiny::mainPanel(
+          mainPanel(
           # new image
-          shiny::tags$img(
+          tags$img(
             src = "img/leprechaun.jpg", 
             height="25%", 
             width="25%"),

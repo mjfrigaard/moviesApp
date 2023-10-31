@@ -7,7 +7,7 @@
 run(...)
 }
 \arguments{
-\item{...}{Additional parameters to pass to \link[shiny:shinyApp]{shiny::shinyApp}.}
+\item{...}{Additional parameters to pass to \link{shinyApp}.}
 }
 \description{
 Run application

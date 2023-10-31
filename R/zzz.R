@@ -3,7 +3,7 @@
 #---------------------------------------------#
 
 .onLoad <- function(...){
-	shiny::addResourcePath(
+	addResourcePath(
 		"img",
 		system.file("img", package = "lap")
 	)

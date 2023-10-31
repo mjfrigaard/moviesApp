@@ -7,24 +7,22 @@
 #'
 #' @description A shiny Module.
 #'
-#' @importFrom shiny NS tagList tags
-#' @importFrom shiny plotOutput
 plot_displayUI <- function(id){
-	ns <- shiny::NS(id)
-	shiny::tagList(
-    shiny::tags$br(),
-    shiny::tags$blockquote(
-      shiny::tags$em(
-        shiny::tags$h6(
+	ns <- NS(id)
+	tagList(
+    tags$br(),
+    tags$blockquote(
+      tags$em(
+        tags$h6(
           "The code for this application comes from the ",
-          shiny::tags$a("Building web applications with Shiny",
+          tags$a("Building web applications with Shiny",
             href = "https://rstudio-education.github.io/shiny-course/"
           ),
           "tutorial"
         )
       )
     ),
-    shiny::plotOutput(outputId = ns("scatterplot"))
+    plotOutput(outputId = ns("scatterplot"))
 	)
 }
 
@@ -46,12 +44,12 @@ plot_display_server <- function(id, var_inputs){
 				send_message <- make_send_message(session)
 
 				send_message("show-packer",
-				  text = "this is a message from your plot_display module")
+				  text = "this is a message from plot_display_server()")
 
 				# your code here
     movies <- lap::movies
 
-    inputs <- shiny::reactive({
+    inputs <- reactive({
       plot_title <- tools::toTitleCase(var_inputs$plot_title())
       list(
         x = var_inputs$x(),
@@ -63,7 +61,7 @@ plot_display_server <- function(id, var_inputs){
       )
     })
 
-    output$scatterplot <- shiny::renderPlot({
+    output$scatterplot <- renderPlot({
       plot <- scatter_plot(
         df = movies,
         x_var = inputs()$x,
