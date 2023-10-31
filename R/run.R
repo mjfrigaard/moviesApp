@@ -4,7 +4,7 @@
 #'
 #' @param ... Additional parameters to pass to [shiny::shinyApp].
 #'
-#' @importFrom shiny shinyApp
+#' @import shiny
 #'
 #' @export
 run <- function(...){

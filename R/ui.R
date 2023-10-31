@@ -4,15 +4,11 @@
 #'
 #' @param req The request object.
 #'
-#' @import shiny
-#' @importFrom bslib bs_theme
-#' @importFrom shiny fluidPage sidebarLayout
-#' @importFrom shiny sidebarPanel mainPanel
 #'
 #' @keywords internal
 ui <- function(req) {
   shiny::fluidPage(
-    theme = bs_theme(version = 5),
+    theme = bslib::bs_theme(version = 5),
     assets(),
     h1("lap"),
     ## New code -->
@@ -40,7 +36,6 @@ ui <- function(req) {
 #' [serveAssets] and allows easily adding additional
 #' remote dependencies (e.g.: CDN) should there be any.
 #'
-#' @importFrom shiny tags
 #'
 #' @keywords internal
 assets <- function(){

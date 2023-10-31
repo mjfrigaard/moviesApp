@@ -8,13 +8,12 @@
 #'
 #' @noRd
 #' @keywords internal
-#' @importFrom shiny renderPrint reactiveValuesToList
 server <- function(input, output, session){
 
 	send_message <- make_send_message(session)
 
 	send_message("show-packer",
-				  text = "this is a message from your server()")
+				  text = "this message is from your R/server.R file")
 
   ## New code -->
    selected_vars <- var_input_server("vars")
