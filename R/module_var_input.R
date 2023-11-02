@@ -9,9 +9,9 @@
 #'
 #' @description A shiny Module.
 #'
-var_inputUI <- function(id){
-	ns <- NS(id)
-	tagList(
+var_inputUI <- function(id) {
+  ns <- NS(id)
+  tagList(
     selectInput(
       inputId = ns("y"),
       label = "Y-axis:",
@@ -65,7 +65,7 @@ var_inputUI <- function(id){
       label = "Plot title",
       placeholder = "Enter plot title"
     )
-	)
+  )
 }
 
 #' var_input Server
@@ -77,43 +77,26 @@ var_inputUI <- function(id){
 #' @return shiny server module
 #' @export var_input_server
 #'
-var_input_server <- function(id){
-	moduleServer(
-		id,
-		function(
-			input,
-			output,
-			session
-			){
+var_input_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
+      ns <- session$ns
+      send_message <- make_send_message(session)
 
-				ns <- session$ns
-				send_message <- make_send_message(session)
-
-				# your code here
-    return(
-      list(
-        "x" = reactive({
-          input$x
-        }),
-        "y" = reactive({
-          input$y
-        }),
-        "z" = reactive({
-          input$z
-        }),
-        "alpha" = reactive({
-          input$alpha
-        }),
-        "size" = reactive({
-          input$size
-        }),
-        "plot_title" = reactive({
-          input$plot_title
+      # your code here
+      return(
+        reactive({
+          list(
+            "y" = input$y,
+            "x" = input$x,
+            "z" = input$z,
+            "alpha" = input$alpha,
+            "size" = input$size,
+            "plot_title" = input$plot_title
+          )
         })
-        )
       )
-		}
-	)
+    }
+  )
 }
 
 # UI
