@@ -58,26 +58,6 @@ git checkout <branch_name>
 
 View the various versions of application in the [`moviesApp` branches](https://github.com/mjfrigaard/moviesApp/branches/all).
 
-## Tests 
+## Traceability matrix with `covtracer`
 
-### `12e_tests-system`
-
-[`12e_tests-system`](https://github.com/mjfrigaard/moviesApp/tree/12e_tests-system) gives examples of [`shinytest2` tests.](https://rstudio.github.io/shinytest2/articles/shinytest2.html)
-
-```
-tests
-├── testthat
-│   ├── fixtures
-│   │   ├── make-tidy_ggp2_movies.R
-│   │   └── tidy_ggp2_movies.rds
-│   ├── helper.R
-│   ├── setup-shinytest2.R
-│   ├── test-feature-01.R
-│   ├── test-mod_scatter_display.R
-│   ├── test-mod_var_input.R
-│   ├── test-scatter_plot.R
-│   └── test-shinytest2.R
-└── testthat.R
-
-3 directories, 10 files
-```
+[`spec_topic-trace-matrix`](https://github.com/mjfrigaard/moviesApp/tree/spec_topic-trace-matrix) gives examples of creating a traceability matrix with [`covtracer`](https://genentech.github.io/covtracer/)
