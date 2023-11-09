@@ -61,3 +61,56 @@ View the various versions of application in the [`moviesApp` branches](https://g
 ## Traceability matrix with `covtracer`
 
 [`spec_topic-trace-matrix`](https://github.com/mjfrigaard/moviesApp/tree/spec_topic-trace-matrix) gives examples of creating a traceability matrix with [`covtracer`](https://genentech.github.io/covtracer/)
+
+Output from tests:
+
+```
+==> devtools::test()
+
+ℹ Testing moviesApp
+Loading required package: shiny
+✔ | F W  S  OK | Context
+✔ |          2 | app-feature-01 [11.2s]
+⠏ |          0 | ggp2_app-feature-01
+INFO [2023-11-09 09:33:04] [ START ggp2movies-feat-01 = update x, y, z, missing]
+⠋ |          1 | ggp2_app-feature-01
+INFO [2023-11-09 09:33:19] [ END ggp2movies-feat-01 = update x, y, z, missing]
+✔ |          1 | ggp2_app-feature-01 [15.2s]
+⠏ |          0 | mod_scatter_display
+INFO [2023-11-09 09:33:19] [ START display = selected_vars initial values]
+
+INFO [2023-11-09 09:33:19] [ END display = selected_vars initial values]
+
+INFO [2023-11-09 09:33:19] [ START display = scatterplot[['alt']] = 'Plot object']
+⠙ |          2 | mod_scatter_display
+INFO [2023-11-09 09:33:20] [ END display = scatterplot[['alt']] = 'Plot object']
+
+INFO [2023-11-09 09:33:20] [ START display = inputs() creates ggplot2 object]
+
+INFO [2023-11-09 09:33:20] [ END display = inputs() creates ggplot2 object]
+✔ |          3 | mod_scatter_display
+⠏ |          0 | mod_var_input
+INFO [2023-11-09 09:33:20] [ START var_inputs = initial returned()]
+
+INFO [2023-11-09 09:33:20] [ END var_inputs = initial returned()]
+
+INFO [2023-11-09 09:33:20] [ START var_inputs = updated returned()]
+
+INFO [2023-11-09 09:33:20] [ END var_inputs = updated returned()]
+✔ |          2 | mod_var_input
+⠏ |          0 | scatter_plot 
+INFO [2023-11-09 09:33:20] [ START fixture = tidy_ggp2_movies.rds]
+
+INFO [2023-11-09 09:33:20] [ START fixture = tidy_ggp2_movies.rds]
+
+INFO [2023-11-09 09:33:20] [ START data = movies.rda]
+
+INFO [2023-11-09 09:33:20] [ END data = movies.rda]
+✔ |          2 | scatter_plot
+✔ |          1 | shinytest2 [6.4s]
+
+══ Results ═══════════════════
+Duration: 33.7 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 11 ]
+```
