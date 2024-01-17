@@ -3,6 +3,7 @@
 export(plot_displayUI)
 export(run)
 export(scatter_plot)
+export(test_logger)
 export(var_inputUI)
 export(var_input_server)
 import(shiny)

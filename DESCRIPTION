@@ -11,11 +11,16 @@ Imports:
     bslib,
     ggplot2,
     htmltools,
+    logger,
     rlang,
     shiny,
     stringr,
     tools,
     utils
+Suggests: 
+    glue,
+    shinytest2,
+    testthat
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
