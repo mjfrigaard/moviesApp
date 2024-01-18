@@ -59,7 +59,7 @@ View all the applications in the [`moviesApp` branches](https://github.com/mjfri
 
 # `19_leprechaun`
 
-The goal of `lap` is to demonstrate the `leprechaun` framework.
+The goal of `lap` is to demonstrate the [`leprechaun` framework](https://leprechaun.opifex.org/#/).
 
 ## Installation
 
