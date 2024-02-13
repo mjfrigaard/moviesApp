@@ -57,9 +57,9 @@ open moviesApp.Rproj
 
 View all the applications in the [`moviesApp` branches](https://github.com/mjfrigaard/moviesApp/branches/all).
 
-## Tests 
+## JavaScript 
 
-### `14_tests-system`
+### `21_js`
 
 [`21_js`](https://github.com/mjfrigaard/moviesApp/tree/21_js) gives examples of including JavaScript in your app-package.
 
