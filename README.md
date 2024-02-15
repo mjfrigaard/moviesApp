@@ -59,7 +59,7 @@ View all the applications in the [`moviesApp` branches](https://github.com/mjfri
 
 ## Python 
 
-### `22_python`
+### `17_python`
 
-[`22_python`](https://github.com/mjfrigaard/moviesApp/tree/22_python) gives examples of including Python code in your app-package.
+[`17_python`](https://github.com/mjfrigaard/moviesApp/tree/17_python) gives examples of including Python code in your app-package.
 
