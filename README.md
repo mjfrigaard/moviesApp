@@ -59,7 +59,7 @@ View all the applications in the [`moviesApp` branches](https://github.com/mjfri
 
 ## JavaScript 
 
-### `21_js`
+### `16_js`
 
-[`21_js`](https://github.com/mjfrigaard/moviesApp/tree/21_js) gives examples of including JavaScript in your app-package.
+[`16_js`](https://github.com/mjfrigaard/moviesApp/tree/16_js) gives examples of including JavaScript in your app-package.
 
