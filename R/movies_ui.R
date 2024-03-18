@@ -50,13 +50,14 @@ movies_ui <- function(bslib = FALSE) {
           div(
             tags$h2(
               style = "color: #02577A; text-align: center;",
-              "Welcome to moviesApp!"),
-            img(
-              src = "www/shiny.png",
-              height = 70,
-              width = 65,
-              style = "margin:10px 600px",
-              align = 'center'
+                "Welcome to moviesApp!",
+              img(
+                src = "www/shiny.png",
+                height = 70,
+                width = 65,
+                style = "margin:10px 10px",
+                align = 'center'
+              )
             )
           )
         ),
